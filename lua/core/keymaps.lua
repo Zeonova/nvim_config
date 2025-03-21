@@ -24,9 +24,8 @@ keymap.set("n", "<C-L>", ":bnext<CR>")
 keymap.set("n", "<C-H>", ":bprevious<CR>")
 
 -- ---------- 插件 ---------- ---
--- nvim-tree
+-- ntree
 keymap.set("n", "<leader>e", ":Neotree toggle<CR>")
-
 
 -- 全部退出
 keymap.set("n", "<leader>qa", ":qa<CR>", { desc = "退出所有窗口" })
@@ -42,23 +41,49 @@ keymap.set("n", "<leader>bo", ":%bd|e#|bd#<CR>", { desc = "关闭其他 Buffer" 
 
 -- 打开/关闭 Trouble
 keymap.set("n", "<leader>xx", "<cmd>Trouble diagnostics toggle<CR>", { desc = "Diagnostics (Trouble)" })
-keymap.set("n", "<leader>xX", "<cmd>Trouble diagnostics toggle filter.buf=0<CR>",
-  { desc = "Buffer Diagnostics (Trouble)" })
+keymap.set(
+	"n",
+	"<leader>xX",
+	"<cmd>Trouble diagnostics toggle filter.buf=0<CR>",
+	{ desc = "Buffer Diagnostics (Trouble)" }
+)
 keymap.set("n", "<leader>cs", "<cmd>Trouble symbols toggle focus=false<CR>", { desc = "Symbols (Trouble)" })
-keymap.set("n", "<leader>cl", "<cmd>Trouble lsp toggle focus=false win.position=right<CR>",
-  { desc = "LSP Definitions / references / ... (Trouble)" })
+keymap.set(
+	"n",
+	"<leader>cl",
+	"<cmd>Trouble lsp toggle focus=false win.position=right<CR>",
+	{ desc = "LSP Definitions / references / ... (Trouble)" }
+)
 keymap.set("n", "<leader>xL", "<cmd>Trouble loclist toggle<CR>", { desc = "Location List (Trouble)" })
 keymap.set("n", "<leader>xQ", "<cmd>Trouble qflist toggle<CR>", { desc = "Quickfix List (Trouble)" })
 
-
--- Flash 插件快捷键配置
-vim.keymap.set("n", "<leader>s", function() require("flash").jump() end, { desc = "Flash" })
-vim.keymap.set("n", "<leader>S", function() require("flash").treesitter() end, { desc = "Flash Treesitter" })
--- vim.keymap.set("o", "r", function() require("flash").remote() end, { desc = "Remote Flash" })
--- vim.keymap.set("o", "R", function() require("flash").treesitter_search() end, { desc = "Treesitter Search" })
--- vim.keymap.set("c", "<c-s>", function() require("flash").toggle() end, { desc = "Toggle Flash Search" })
+-- Flash 插件快捷键配
+keymap.set("n", "<leader>s", function()
+	require("flash").jump()
+end, { desc = "Flash" })
+keymap.set("n", "<leader>S", function()
+	require("flash").treesitter()
+end, { desc = "Flash Treesitter" })
+-- keymap.set("o", "r", function() require("flash").remote() end, { desc = "Remote Flash" })
+-- keymap.set("o", "R", function() require("flash").treesitter_search() end, { desc = "Treesitter Search" })
+-- keymap.set("c", "<c-s>", function() require("flash").toggle() end, { desc = "Toggle Flash Search" })
 
 -- Code Action
-vim.keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", { silent = true, noremap = true })
--- 绑定可视模式下的快捷键（选中代码范围后触发 code_action）
-vim.keymap.set("v", "<leader>ca", "<cmd>Lspsaga code_action<CR>", { silent = true, noremap = true })
+keymap.set(
+	"n",
+	"<leader>ca",
+	"<cmd>lua vim.lsp.buf.code_action()<CR>",
+	{ desc = "触发代码操作（Code Action）" }
+)
+-- Todo Comment
+keymap.set("n", "<leader>tf", "<CMD>TodoTelescope keywords=TODO,FIX<CR>", { desc = "Toggle Todo Telescope" })
+-- 在 Trouble 中列出所有 TODO
+keymap.set("n", "<leader>tt", function()
+	-- 如果窗口已打开，则关闭；否则打开
+	local trouble = require("trouble")
+	if trouble.is_open() then
+		trouble.close()
+	else
+		vim.cmd("Trouble todo")
+	end
+end, { desc = "Toggle Todo Trouble" })
