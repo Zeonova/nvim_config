@@ -158,5 +158,7 @@ require("marks").setup({
 		-- defaults to false.
 		annotate = false,
 	},
-	mappings = {},
+	mappings = {
+		preview = "",
+	},
 })
