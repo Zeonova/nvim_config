@@ -12,8 +12,9 @@ keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- ---------- 正常模式 ---------- ---
 -- 窗口
-keymap.set("n", "<leader>sv", "<C-w>v", { desc = "水平新增窗口" }) -- 水平新增窗口
-keymap.set("n", "<leader>sh", "<C-w>s", { desc = "垂直新增窗口" }) -- 垂直新增窗口
+keymap.set("n", "<leader>wv", "<C-w>v", { desc = "水平新增窗口" }) -- 水平新增窗口
+keymap.set("n", "<leader>wh", "<C-w>s", { desc = "垂直新增窗口" }) -- 垂直新增窗口
+keymap.set("n", "<leader>wq", ":q<CR>", { desc = "关闭当前窗口" })
 
 -- 取消高亮
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "取消高亮" })
@@ -24,7 +25,7 @@ keymap.set("n", "<C-H>", ":bprevious<CR>")
 
 -- ---------- 插件 ---------- ---
 -- nvim-tree
-keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
+keymap.set("n", "<leader>e", ":Neotree toggle<CR>")
 
 
 -- 全部退出
@@ -48,3 +49,16 @@ keymap.set("n", "<leader>cl", "<cmd>Trouble lsp toggle focus=false win.position=
   { desc = "LSP Definitions / references / ... (Trouble)" })
 keymap.set("n", "<leader>xL", "<cmd>Trouble loclist toggle<CR>", { desc = "Location List (Trouble)" })
 keymap.set("n", "<leader>xQ", "<cmd>Trouble qflist toggle<CR>", { desc = "Quickfix List (Trouble)" })
+
+
+-- Flash 插件快捷键配置
+vim.keymap.set("n", "<leader>s", function() require("flash").jump() end, { desc = "Flash" })
+vim.keymap.set("n", "<leader>S", function() require("flash").treesitter() end, { desc = "Flash Treesitter" })
+-- vim.keymap.set("o", "r", function() require("flash").remote() end, { desc = "Remote Flash" })
+-- vim.keymap.set("o", "R", function() require("flash").treesitter_search() end, { desc = "Treesitter Search" })
+-- vim.keymap.set("c", "<c-s>", function() require("flash").toggle() end, { desc = "Toggle Flash Search" })
+
+-- Code Action
+vim.keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", { silent = true, noremap = true })
+-- 绑定可视模式下的快捷键（选中代码范围后触发 code_action）
+vim.keymap.set("v", "<leader>ca", "<cmd>Lspsaga code_action<CR>", { silent = true, noremap = true })

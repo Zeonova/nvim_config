@@ -1,14 +1,10 @@
-require'nvim-treesitter.configs'.setup {
-  -- 添加不同语言
-  ensure_installed = { "vim",  "bash", "c", "cpp", "javascript", "json", "lua", "python", "typescript", "tsx", "css", "rust", "markdown", "markdown_inline" }, -- one of "all" or a list of languages
+require 'nvim-treesitter.configs'.setup {
+  -- A list of parser names, or "all" (the listed parsers MUST always be installed)
+  ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline", "rust" },
+  sync_install = false,
+  auto_install = true,
 
-  highlight = { enable = true },
-  indent = { enable = true },
-
-  -- 不同括号颜色区分
-  rainbow = {
+  highlight = {
     enable = true,
-    extended_mode = true,
-    max_file_lines = nil,
-  }
+  },
 }

@@ -104,6 +104,16 @@ _G.packer_plugins = {
     path = "/Users/kas/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  ["fidget.nvim"] = {
+    loaded = true,
+    path = "/Users/kas/.local/share/nvim/site/pack/packer/start/fidget.nvim",
+    url = "https://github.com/j-hui/fidget.nvim"
+  },
+  ["flash.nvim"] = {
+    loaded = true,
+    path = "/Users/kas/.local/share/nvim/site/pack/packer/start/flash.nvim",
+    url = "https://github.com/folke/flash.nvim"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/Users/kas/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -123,6 +133,14 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/kas/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
+  },
+  ["lspsaga.nvim"] = {
+    config = { "\27LJ\2\n–\1\0\0\5\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\3\0005\4\4\0=\4\5\3=\3\a\2B\0\2\1K\0\1\0\16code_action\1\0\1\16code_action\0\tkeys\1\0\2\texec\t<CR>\tquit\n<Esc>\1\0\2\14show_icon\2\tkeys\0\nsetup\flspsaga\frequire\0" },
+    load_after = {},
+    loaded = true,
+    needs_bufread = false,
+    path = "/Users/kas/.local/share/nvim/site/pack/packer/opt/lspsaga.nvim",
+    url = "https://github.com/nvimdev/lspsaga.nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,
@@ -144,6 +162,11 @@ _G.packer_plugins = {
     path = "/Users/kas/.local/share/nvim/site/pack/packer/start/neo-tree.nvim",
     url = "https://github.com/nvim-neo-tree/neo-tree.nvim"
   },
+  ["noice.nvim"] = {
+    loaded = true,
+    path = "/Users/kas/.local/share/nvim/site/pack/packer/start/noice.nvim",
+    url = "https://github.com/folke/noice.nvim"
+  },
   ["nui.nvim"] = {
     loaded = true,
     path = "/Users/kas/.local/share/nvim/site/pack/packer/start/nui.nvim",
@@ -163,6 +186,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/kas/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-notify"] = {
+    loaded = true,
+    path = "/Users/kas/.local/share/nvim/site/pack/packer/start/nvim-notify",
+    url = "https://github.com/rcarriga/nvim-notify"
   },
   ["nvim-treesitter"] = {
     loaded = true,
@@ -212,6 +240,15 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Load plugins in order defined by `after`
+time([[Sequenced loading]], true)
+vim.cmd [[ packadd nvim-lspconfig ]]
+vim.cmd [[ packadd lspsaga.nvim ]]
+
+-- Config for: lspsaga.nvim
+try_loadstring("\27LJ\2\n–\1\0\0\5\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\3\0005\4\4\0=\4\5\3=\3\a\2B\0\2\1K\0\1\0\16code_action\1\0\1\16code_action\0\tkeys\1\0\2\texec\t<CR>\tquit\n<Esc>\1\0\2\14show_icon\2\tkeys\0\nsetup\flspsaga\frequire\0", "config", "lspsaga.nvim")
+
+time([[Sequenced loading]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
