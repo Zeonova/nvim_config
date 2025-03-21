@@ -20,8 +20,8 @@ keymap.set("n", "<leader>wq", ":q<CR>", { desc = "关闭当前窗口" })
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "取消高亮" })
 
 -- 切换buffer
-keymap.set("n", "<C-L>", ":bnext<CR>")
-keymap.set("n", "<C-H>", ":bprevious<CR>")
+keymap.set("n", "<S-L>", ":bnext<CR>")
+keymap.set("n", "<S-H>", ":bprevious<CR>")
 
 -- ---------- 插件 ---------- ---
 -- ntree
@@ -87,3 +87,12 @@ keymap.set("n", "<leader>tt", function()
 		vim.cmd("Trouble todo")
 	end
 end, { desc = "Toggle Todo Trouble" })
+
+keymap.set("n", "<leader>gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { desc = "跳转到定义" })
+keymap.set("n", "<leader>gh", "<cmd>lua vim.lsp.buf.hover()<CR>", { desc = "查看文档" })
+keymap.set("n", "<leader>gr", "<cmd>lua vim.lsp.buf.references()<CR>", { desc = "跳转到引用" })
+keymap.set("n", "<leader>gt", "<cmd>lua vim.lsp.buf.type_definition()<CR>", { desc = "跳转到类型定义" })
+keymap.set("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", { desc = "重命名符号" })
+keymap.set("n", "<leader>gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", { desc = "跳转到实现" })
+keymap.set("n", "<leader>gs", "<cmd>lua vim.lsp.buf.signature_help()<CR>", { desc = "查看签名帮助" })
+-- keymap.set("n", "<leader>oi", "<cmd>lua vim.lsp.buf.organize_imports()<CR>", { desc = "整理导入" })
