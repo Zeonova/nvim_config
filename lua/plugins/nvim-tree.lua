@@ -3,6 +3,9 @@ require("neo-tree").setup({
 	popup_border_style = "double", -- 可选：设置弹出窗口边框样式
 	enable_git_status = true, -- 启用 Git 状态显示
 	enable_diagnostics = true, -- 启用诊断信息显示
+	filesystem = {
+		use_libuv_file_watcher = true, -- 监听文件变化
+	},
 	default_component_configs = {
 		container = {
 			enable_character_fade = true,
@@ -35,6 +38,7 @@ require("neo-tree").setup({
 			highlight = "NeoTreeFileName",
 		},
 		git_status = {
+			refresh = true, -- 启用 Git 状态自动刷新
 			symbols = {
 				-- Change type
 				added = "✚", -- or "✚", but this is redundant info if you use git_status_colors on the name
