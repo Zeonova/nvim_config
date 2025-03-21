@@ -105,7 +105,7 @@ _G.packer_plugins = {
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
   ["conform.nvim"] = {
-    config = { "\27LJ\2\nô\2\0\0\5\0\16\0\0196\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\f\0005\3\4\0005\4\3\0=\4\5\0035\4\6\0=\4\a\0035\4\b\0=\4\t\0035\4\n\0=\4\v\3=\3\r\0025\3\14\0=\3\15\2B\0\2\1K\0\1\0\19format_on_save\1\0\2\15timeout_ms\3ô\3\15lsp_format\rfallback\21formatters_by_ft\1\0\2\21formatters_by_ft\0\19format_on_save\0\15javascript\1\3\1\0\14prettierd\rprettier\21stop_after_first\2\trust\1\2\1\0\frustfmt\15lsp_format\rfallback\vpython\1\3\0\0\nisort\nblack\blua\1\0\4\vpython\0\blua\0\trust\0\15javascript\0\1\2\0\0\vstylua\nsetup\fconform\frequire\0" },
+    config = { "\27LJ\2\nô\2\0\0\5\0\16\0\0196\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\f\0005\3\4\0005\4\3\0=\4\5\0035\4\6\0=\4\a\0035\4\b\0=\4\t\0035\4\n\0=\4\v\3=\3\r\0025\3\14\0=\3\15\2B\0\2\1K\0\1\0\19format_on_save\1\0\2\15lsp_format\rfallback\15timeout_ms\3ô\3\21formatters_by_ft\1\0\2\19format_on_save\0\21formatters_by_ft\0\15javascript\1\3\1\0\14prettierd\rprettier\21stop_after_first\2\trust\1\2\1\0\frustfmt\15lsp_format\rfallback\vpython\1\3\0\0\nisort\nblack\blua\1\0\4\trust\0\vpython\0\15javascript\0\blua\0\1\2\0\0\vstylua\nsetup\fconform\frequire\0" },
     loaded = true,
     path = "/Users/kas/.local/share/nvim/site/pack/packer/start/conform.nvim",
     url = "https://github.com/stevearc/conform.nvim"
@@ -144,6 +144,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/kas/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
+  ["marks.nvim"] = {
+    loaded = true,
+    path = "/Users/kas/.local/share/nvim/site/pack/packer/start/marks.nvim",
+    url = "https://github.com/chentoast/marks.nvim"
   },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
@@ -250,7 +255,7 @@ _G.packer_plugins = {
 time([[Defining packer_plugins]], false)
 -- Config for: conform.nvim
 time([[Config for conform.nvim]], true)
-try_loadstring("\27LJ\2\nô\2\0\0\5\0\16\0\0196\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\f\0005\3\4\0005\4\3\0=\4\5\0035\4\6\0=\4\a\0035\4\b\0=\4\t\0035\4\n\0=\4\v\3=\3\r\0025\3\14\0=\3\15\2B\0\2\1K\0\1\0\19format_on_save\1\0\2\15timeout_ms\3ô\3\15lsp_format\rfallback\21formatters_by_ft\1\0\2\21formatters_by_ft\0\19format_on_save\0\15javascript\1\3\1\0\14prettierd\rprettier\21stop_after_first\2\trust\1\2\1\0\frustfmt\15lsp_format\rfallback\vpython\1\3\0\0\nisort\nblack\blua\1\0\4\vpython\0\blua\0\trust\0\15javascript\0\1\2\0\0\vstylua\nsetup\fconform\frequire\0", "config", "conform.nvim")
+try_loadstring("\27LJ\2\nô\2\0\0\5\0\16\0\0196\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\f\0005\3\4\0005\4\3\0=\4\5\0035\4\6\0=\4\a\0035\4\b\0=\4\t\0035\4\n\0=\4\v\3=\3\r\0025\3\14\0=\3\15\2B\0\2\1K\0\1\0\19format_on_save\1\0\2\15lsp_format\rfallback\15timeout_ms\3ô\3\21formatters_by_ft\1\0\2\19format_on_save\0\21formatters_by_ft\0\15javascript\1\3\1\0\14prettierd\rprettier\21stop_after_first\2\trust\1\2\1\0\frustfmt\15lsp_format\rfallback\vpython\1\3\0\0\nisort\nblack\blua\1\0\4\trust\0\vpython\0\15javascript\0\blua\0\1\2\0\0\vstylua\nsetup\fconform\frequire\0", "config", "conform.nvim")
 time([[Config for conform.nvim]], false)
 
 _G._packer.inside_compile = false

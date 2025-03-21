@@ -5,6 +5,11 @@ vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "查找文件" })
 vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "实时 grep 搜索（需要安装 ripgrep）" }) -- 环境里要安装ripgrep
 vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "列出打开的缓冲区" })
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "搜索帮助标签" })
+vim.keymap.set("n", "<leader>fr", builtin.registers, { desc = "查看寄存器" })
+vim.keymap.set("n", "<leader>fj", builtin.jumplist, { desc = "查看跳转历史" })
+vim.keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "查看快捷键映射" })
+vim.keymap.set("n", "<leader>fm", builtin.marks, { desc = "查看书签" })
+vim.keymap.set("n", "<leader>fo", builtin.oldfiles, { desc = "查看历史文件" })
 
 require("telescope").setup({
 	extensions = {

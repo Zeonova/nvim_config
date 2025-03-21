@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-field
 vim.g.mapleader = " "
 
 local keymap = vim.keymap
@@ -11,10 +12,6 @@ keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- ---------- 正常模式 ---------- ---
--- 窗口
-keymap.set("n", "<leader>wv", "<C-w>v", { desc = "水平新增窗口" }) -- 水平新增窗口
-keymap.set("n", "<leader>wh", "<C-w>s", { desc = "垂直新增窗口" }) -- 垂直新增窗口
-keymap.set("n", "<leader>wq", ":q<CR>", { desc = "关闭当前窗口" })
 
 -- 取消高亮
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "取消高亮" })
@@ -92,7 +89,40 @@ keymap.set("n", "<leader>gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { desc = 
 keymap.set("n", "<leader>gh", "<cmd>lua vim.lsp.buf.hover()<CR>", { desc = "查看文档" })
 keymap.set("n", "<leader>gr", "<cmd>lua vim.lsp.buf.references()<CR>", { desc = "跳转到引用" })
 keymap.set("n", "<leader>gt", "<cmd>lua vim.lsp.buf.type_definition()<CR>", { desc = "跳转到类型定义" })
-keymap.set("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", { desc = "重命名符号" })
+keymap.set("n", "<leader>grn", "<cmd>lua vim.lsp.buf.rename()<CR>", { desc = "重命名符号" })
 keymap.set("n", "<leader>gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", { desc = "跳转到实现" })
 keymap.set("n", "<leader>gs", "<cmd>lua vim.lsp.buf.signature_help()<CR>", { desc = "查看签名帮助" })
 -- keymap.set("n", "<leader>oi", "<cmd>lua vim.lsp.buf.organize_imports()<CR>", { desc = "整理导入" })
+keymap.set("n", "<leader>rr", "<C-o>", { desc = "回退光标" })
+
+-- Marks
+vim.keymap.set("n", "<leader>mm", function()
+	---@diagnostic disable-next-line: undefined-field
+	require("marks").set_next()
+end, { desc = "Set the next available mark" })
+
+vim.keymap.set("n", "<leader>mt", function()
+	require("marks").toggle()
+end, { desc = "Toggle the next available mark" })
+
+vim.keymap.set("n", "<leader>mn", function()
+	require("marks").next()
+end, { desc = "Move to next mark" })
+
+-- 删除书签的相关操作
+vim.keymap.set("n", "<leader>mc", function()
+	require("marks").delete_buf()
+end, { desc = "Delete all marks in the current buffer" })
+
+vim.keymap.set("n", "<leader>md", function()
+	require("marks").delete_line()
+end, { desc = "Delete the bookmark under the cursor" })
+
+-- whick-key grouping
+--
+require("which-key").add({
+	{ "<leader>w", proxy = "<C-w>", group = "windows" },
+	{ "<leader>f", group = "File" }, -- group
+	{ "<leader>g", group = "Code" }, -- group
+	{ "<leader>m", group = "Marks" }, -- group
+})

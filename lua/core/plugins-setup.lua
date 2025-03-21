@@ -100,6 +100,9 @@ return require("packer").startup(function(use)
 		"MunifTanjim/nui.nvim",
 		"rcarriga/nvim-notify",
 	})
+
+	use("chentoast/marks.nvim")
+
 	use("folke/which-key.nvim")
 
 	if packer_bootstrap then
