@@ -11,6 +11,11 @@ vim.keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "查看快捷键映�
 vim.keymap.set("n", "<leader>fm", builtin.marks, { desc = "查看书签" })
 vim.keymap.set("n", "<leader>fo", builtin.oldfiles, { desc = "查看历史文件" })
 
+vim.keymap.set("n", "<leader>fd", builtin.lsp_definitions, { desc = "查看函数定义" })
+vim.keymap.set("n", "<leader>ft", builtin.lsp_type_definitions, { desc = "查看类型定义" })
+vim.keymap.set("n", "<leader>fs", builtin.lsp_document_symbols, { desc = "查看文档中的符号" })
+vim.keymap.set("n", "<leader>fw", builtin.lsp_workspace_symbols, { desc = "查看工作区符号" })
+
 require("telescope").setup({
 	extensions = {
 		["ui-select"] = {

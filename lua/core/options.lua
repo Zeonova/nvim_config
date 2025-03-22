@@ -31,8 +31,9 @@ opt.ignorecase = true
 opt.smartcase = true
 
 -- 外观
-opt.winbar = "%=%m %t"  -- 只显示文件名
+opt.winbar = "%=%m %t" -- 只显示文件名
 
 opt.termguicolors = true
 opt.signcolumn = "yes"
-vim.cmd[[colorscheme tokyonight-moon]]
+
+vim.cmd([[colorscheme tokyonight-moon]])

@@ -4,7 +4,7 @@ vim.g.mapleader = " "
 local keymap = vim.keymap
 
 -- ---------- 插入模式 ---------- ---
--- keymap.set("i", "jk", "<ESC>")
+keymap.set("i", "jk", "<ESC>")
 
 -- ---------- 视觉模式 ---------- ---
 -- 单行或多行移动
@@ -30,10 +30,8 @@ keymap.set("n", "<leader>qa", ":qa<CR>", { desc = "退出所有窗口" })
 -- 全部保存后退出
 keymap.set("n", "<leader>qw", ":wa | qa<CR>", { desc = "保存所有文件并退出" })
 
--- 关闭当前 buffer
 keymap.set("n", "<leader>bd", ":bd<CR>", { desc = "关闭当前 Buffer" })
-
--- 关闭其他 buffer
+keymap.set("n", "<leader>bb", ":bnext<CR>", { desc = "Switch Buffer(Just next)" })
 keymap.set("n", "<leader>bo", ":%bd|e#|bd#<CR>", { desc = "关闭其他 Buffer" })
 
 -- 打开/关闭 Trouble
@@ -118,11 +116,17 @@ vim.keymap.set("n", "<leader>md", function()
 	require("marks").delete_line()
 end, { desc = "Delete the bookmark under the cursor" })
 
--- whick-key grouping
+-- TestFunction
+vim.keymap.set(
+	"n",
+	"<leader>it",
+	':!osascript -e "tell application \\"iTerm\\" to create window with default profile"\n',
+	{ desc = "Open new iTerm2 window" }
+) -- whick-key grouping
 --
 require("which-key").add({
 	{ "<leader>w", proxy = "<C-w>", group = "windows" },
-	{ "<leader>f", group = "File" }, -- group
+	{ "<leader>f", group = "Telescope" }, -- group
 	{ "<leader>g", group = "Code" }, -- group
 	{ "<leader>m", group = "Marks" }, -- group
 })

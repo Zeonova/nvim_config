@@ -12,7 +12,7 @@ require("luasnip.loaders.from_vscode").lazy_load()
 require("luasnip.loaders.from_lua").load()
 require("luasnip").config.set_config({
 	enable_autosnippets = true,
-	store_selection_keys = "`",
+	-- store_selection_keys = "`",
 })
 
 -- 下面会用到这个函数
@@ -22,9 +22,6 @@ local check_backspace = function()
 end
 
 cmp.setup({
-	completion = {
-		completeopt = "noinsert,menuone", -- 禁用插入和不显示补全选单
-	},
 	snippet = {
 		expand = function(args)
 			require("luasnip").lsp_expand(args.body)
@@ -34,7 +31,7 @@ cmp.setup({
 		["<C-b>"] = cmp.mapping.scroll_docs(-4),
 		["<C-f>"] = cmp.mapping.scroll_docs(4),
 		["<C-e>"] = cmp.mapping.abort(), -- 取消补全，esc也可以退出
-		["<CR>"] = cmp.mapping.confirm({ select = true }),
+		["<CR>"] = cmp.mapping.confirm({ select = false }),
 
 		["<Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
@@ -67,12 +64,12 @@ cmp.setup({
 		}),
 	}),
 
-	-- 这里重要
-	sources = cmp.config.sources({
+	sources = {
 		{ name = "nvim_lsp" },
 		{ name = "luasnip" },
 		{ name = "path" },
-	}, {
+	},
+	{
 		{ name = "buffer" },
-	}),
+	},
 })
