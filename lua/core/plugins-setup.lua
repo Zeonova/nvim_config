@@ -46,9 +46,12 @@ return require("packer").startup(function(use)
 		"williamboman/mason-lspconfig.nvim", -- 这个相当于mason.nvim和lspconfig的桥梁
 		"neovim/nvim-lspconfig",
 	})
-	use({ "nvimtools/none-ls.nvim", requires = {
-		"nvimtools/none-ls-extras.nvim",
-	} })
+	use({
+		"nvimtools/none-ls.nvim",
+		requires = {
+			"nvimtools/none-ls-extras.nvim",
+		},
+	})
 	-- 自动补全
 	use("hrsh7th/nvim-cmp")
 	use("hrsh7th/cmp-nvim-lsp")
@@ -62,19 +65,12 @@ return require("packer").startup(function(use)
 		config = function()
 			require("conform").setup({
 				formatters_by_ft = {
-					lua = { "stylua" },
-					-- Conform will run multiple formatters sequentially
-					python = { "isort", "black" },
-					-- You can customize some of the format options for the filetype (:help conform.format)
-					rust = { "rustfmt", lsp_format = "fallback" },
-					-- Conform will run the first available formatter
-					javascript = { "prettierd", "prettier", stop_after_first = true },
+					toml = { "taplo" }, -- 为 toml 文件使用 taplo 格式化
 				},
 				format_on_save = {
-					-- These options will be passed to conform.format()
 					timeout_ms = 500,
 					lsp_format = "fallback",
-				}, -- 自定义 UI 提示（需安装 nvim-notify）
+				},
 			})
 		end,
 	})

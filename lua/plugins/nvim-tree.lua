@@ -3,9 +3,18 @@ require("neo-tree").setup({
 	popup_border_style = "double", -- 可选：设置弹出窗口边框样式
 	enable_git_status = true, -- 启用 Git 状态显示
 	enable_diagnostics = true, -- 启用诊断信息显示
+	open_files_do_not_replace_types = { "terminal", "trouble", "qf" },
 	filesystem = {
 		use_libuv_file_watcher = true, -- 监听文件变化
+		-- 自定义过滤器
+		filtered_items = {
+			always_show = { -- remains visible even if other settings would normally hide it
+				".gitignore",
+				".env",
+			},
+		},
 	},
+
 	default_component_configs = {
 		container = {
 			enable_character_fade = true,

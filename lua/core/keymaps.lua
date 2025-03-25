@@ -1,10 +1,9 @@
 ---@diagnostic disable: undefined-field
 vim.g.mapleader = " "
-
 local keymap = vim.keymap
-
 -- ---------- 插入模式 ---------- ---
 keymap.set("i", "jk", "<ESC>")
+keymap.set({ "n", "i" }, "<C-s>", "<Esc>:w<CR>", { desc = "保存文件并保持在插入模式" })
 
 -- ---------- 视觉模式 ---------- ---
 -- 单行或多行移动
@@ -30,7 +29,8 @@ keymap.set("n", "<leader>qa", ":qa<CR>", { desc = "退出所有窗口" })
 -- 全部保存后退出
 keymap.set("n", "<leader>qw", ":wa | qa<CR>", { desc = "保存所有文件并退出" })
 
-keymap.set("n", "<leader>bd", ":bd<CR>", { desc = "关闭当前 Buffer" })
+keymap.set("n", "<leader>bd", ":BClose<CR>", { desc = "关闭当前 Buffer" })
+
 keymap.set("n", "<leader>bb", ":bnext<CR>", { desc = "Switch Buffer(Just next)" })
 keymap.set("n", "<leader>bo", ":%bd|e#|bd#<CR>", { desc = "关闭其他 Buffer" })
 
@@ -87,7 +87,7 @@ keymap.set("n", "<leader>gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { desc = 
 keymap.set("n", "<leader>gh", "<cmd>lua vim.lsp.buf.hover()<CR>", { desc = "查看文档" })
 keymap.set("n", "<leader>gr", "<cmd>lua vim.lsp.buf.references()<CR>", { desc = "跳转到引用" })
 keymap.set("n", "<leader>gt", "<cmd>lua vim.lsp.buf.type_definition()<CR>", { desc = "跳转到类型定义" })
-keymap.set("n", "<leader>grn", "<cmd>lua vim.lsp.buf.rename()<CR>", { desc = "重命名符号" })
+keymap.set("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", { desc = "重命名符号" })
 keymap.set("n", "<leader>gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", { desc = "跳转到实现" })
 keymap.set("n", "<leader>gs", "<cmd>lua vim.lsp.buf.signature_help()<CR>", { desc = "查看签名帮助" })
 -- keymap.set("n", "<leader>oi", "<cmd>lua vim.lsp.buf.organize_imports()<CR>", { desc = "整理导入" })

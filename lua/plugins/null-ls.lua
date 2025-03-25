@@ -1,12 +1,16 @@
 local null_ls = require("null-ls")
 
+-- echo executable("stylua") should echo 1 if available (and 0 if not)
 null_ls.setup({
 	sources = {
 		null_ls.builtins.formatting.stylua,
-		null_ls.builtins.completion.spell,
 		null_ls.builtins.formatting.biome,
-		require("none-ls.formatting.jq"),
-		require("none-ls.code_actions.eslint"),
+		null_ls.builtins.formatting.djlint,
+		null_ls.builtins.formatting.prettier,
+		null_ls.builtins.diagnostics.write_good,
+		null_ls.builtins.diagnostics.djlint,
+		null_ls.builtins.completion.tags,
+		require("none-ls.diagnostics.eslint"), -- requires none-ls-extras.nvim
 	},
 })
 
@@ -20,7 +24,7 @@ local hello_hit = {
 			-- sources have access to a params object
 			-- containing info about the current file and editor state
 			for i, line in ipairs(params.content) do
-				local col, end_col = line:find("hello")
+				local col, end_col = line:find("Hello")
 				if col and end_col then
 					-- null-ls fills in undefined positions
 					-- and converts source diagnostics into the required format
