@@ -10,6 +10,10 @@ opt.shiftwidth = 2
 opt.expandtab = true
 opt.autoindent = true
 
+opt.foldmethod = "expr"
+opt.foldexpr = "nvim_treesitter#foldexpr()"
+opt.foldlevelstart = 99 -- 默认展开所有折叠
+opt.foldenable = true
 -- 防止包裹
 opt.wrap = false
 
