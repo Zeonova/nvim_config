@@ -40,4 +40,7 @@ opt.winbar = "%=%m %t" -- 只显示文件名
 opt.termguicolors = true
 opt.signcolumn = "yes"
 
+opt.spell = true
+opt.spelllang = { "en_us" }
+
 vim.cmd([[colorscheme tokyonight-moon]])

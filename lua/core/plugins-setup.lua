@@ -59,6 +59,8 @@ return require("packer").startup(function(use)
 	use("saadparwaiz1/cmp_luasnip")
 	use("rafamadriz/friendly-snippets")
 	use("hrsh7th/cmp-path") -- 文件路径
+	use("hrsh7th/cmp-omni")
+	use("f3fora/cmp-spell")
 
 	use({
 		"stevearc/conform.nvim",

@@ -7,9 +7,10 @@ null_ls.setup({
 		null_ls.builtins.formatting.biome,
 		null_ls.builtins.formatting.djlint,
 		null_ls.builtins.formatting.prettier,
+		null_ls.builtins.formatting.shfmt,
+
 		null_ls.builtins.diagnostics.write_good,
 		null_ls.builtins.diagnostics.djlint,
-		null_ls.builtins.completion.tags,
 		require("none-ls.diagnostics.eslint"), -- requires none-ls-extras.nvim
 	},
 })
