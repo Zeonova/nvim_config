@@ -43,4 +43,6 @@ opt.signcolumn = "yes"
 opt.spell = true
 opt.spelllang = { "en_us" }
 
+opt.makeprg = "checkmake"
+
 vim.cmd([[colorscheme tokyonight-moon]])
