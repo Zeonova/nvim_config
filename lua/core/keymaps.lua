@@ -3,7 +3,7 @@ vim.g.mapleader = " "
 local keymap = vim.keymap
 -- ---------- 插入模式 ---------- ---
 keymap.set("i", "jk", "<ESC>")
-keymap.set({ "n", "i" }, "<C-s>", "<Esc>:w<CR>", { desc = "保存文件并保持在插入模式" })
+keymap.set({ "n", "i" }, "<C-s>", "<Esc>:w<CR>", { desc = "保存文件" })
 -- 在插入模式下撤销并保持光标位置
 vim.api.nvim_set_keymap("i", "<C-z>", '<Esc>:lua vim.cmd("normal! u")<CR>i', { noremap = true, silent = true })
 

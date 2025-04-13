@@ -84,6 +84,11 @@ _G.packer_plugins = {
     path = "/Users/kas/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["avante.nvim"] = {
+    loaded = true,
+    path = "/Users/kas/.local/share/nvim/site/pack/packer/start/avante.nvim",
+    url = "https://github.com/yetone/avante.nvim"
+  },
   ["bufferline.nvim"] = {
     loaded = true,
     path = "/Users/kas/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
@@ -115,15 +120,25 @@ _G.packer_plugins = {
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
   ["conform.nvim"] = {
-    config = { "\27LJ\2\nÓ\1\0\0\5\0\n\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\4\0005\4\3\0=\4\5\3=\3\a\0025\3\b\0=\3\t\2B\0\2\1K\0\1\0\19format_on_save\1\0\2\15timeout_ms\3ô\3\15lsp_format\rfallback\21formatters_by_ft\1\0\2\19format_on_save\0\21formatters_by_ft\0\ttoml\1\0\1\ttoml\0\1\2\0\0\ntaplo\nsetup\fconform\frequire\0" },
+    config = { "\27LJ\2\n†\2\0\0\5\0\f\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\b\0005\3\4\0005\4\3\0=\4\5\0035\4\6\0=\4\a\3=\3\t\0025\3\n\0=\3\v\2B\0\2\1K\0\1\0\19format_on_save\1\0\2\15timeout_ms\3ô\3\15lsp_format\rfallback\21formatters_by_ft\1\0\2\21formatters_by_ft\0\19format_on_save\0\trust\1\2\1\0\frustfmt\15lsp_format\rfallback\ttoml\1\0\2\trust\0\ttoml\0\1\2\0\0\ntaplo\nsetup\fconform\frequire\0" },
     loaded = true,
     path = "/Users/kas/.local/share/nvim/site/pack/packer/start/conform.nvim",
     url = "https://github.com/stevearc/conform.nvim"
+  },
+  ["copilot.lua"] = {
+    loaded = true,
+    path = "/Users/kas/.local/share/nvim/site/pack/packer/start/copilot.lua",
+    url = "https://github.com/zbirenbaum/copilot.lua"
   },
   ["dashboard-nvim"] = {
     loaded = true,
     path = "/Users/kas/.local/share/nvim/site/pack/packer/start/dashboard-nvim",
     url = "https://github.com/nvimdev/dashboard-nvim"
+  },
+  ["dressing.nvim"] = {
+    loaded = true,
+    path = "/Users/kas/.local/share/nvim/site/pack/packer/start/dressing.nvim",
+    url = "https://github.com/stevearc/dressing.nvim"
   },
   ["fidget.nvim"] = {
     loaded = true,
@@ -245,8 +260,13 @@ _G.packer_plugins = {
     path = "/Users/kas/.local/share/nvim/site/pack/packer/start/project.nvim",
     url = "https://github.com/ahmedkhalf/project.nvim"
   },
+  ["render-markdown.nvim"] = {
+    loaded = true,
+    path = "/Users/kas/.local/share/nvim/site/pack/packer/start/render-markdown.nvim",
+    url = "https://github.com/MeanderingProgrammer/render-markdown.nvim"
+  },
   ["tabout.nvim"] = {
-    config = { "\27LJ\2\n§\3\0\0\5\0\f\0\0236\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0004\3\a\0005\4\4\0>\4\1\0035\4\5\0>\4\2\0035\4\6\0>\4\3\0035\4\a\0>\4\4\0035\4\b\0>\4\5\0035\4\t\0>\4\6\3=\3\n\0024\3\0\0=\3\v\2B\0\2\1K\0\1\0\fexclude\ftabouts\1\0\2\topen\6{\nclose\6}\1\0\2\topen\6[\nclose\6]\1\0\2\topen\6(\nclose\6)\1\0\2\topen\6`\nclose\6`\1\0\2\topen\6\"\nclose\6\"\1\0\2\topen\6'\nclose\6'\1\0\v\fexclude\0\vtabkey\n<Tab>\21ignore_beginning\2\ftabouts\0\15completion\2\21enable_backwards\2\22default_shift_tab\n<C-d>\16default_tab\n<C-t>\21act_as_shift_tab\1\15act_as_tab\2\21backwards_tabkey\f<S-Tab>\nsetup\vtabout\frequire\0" },
+    config = { "\27LJ\2\n§\3\0\0\5\0\f\0\0236\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0004\3\a\0005\4\4\0>\4\1\0035\4\5\0>\4\2\0035\4\6\0>\4\3\0035\4\a\0>\4\4\0035\4\b\0>\4\5\0035\4\t\0>\4\6\3=\3\n\0024\3\0\0=\3\v\2B\0\2\1K\0\1\0\fexclude\ftabouts\1\0\2\nclose\6}\topen\6{\1\0\2\nclose\6]\topen\6[\1\0\2\nclose\6)\topen\6(\1\0\2\nclose\6`\topen\6`\1\0\2\nclose\6\"\topen\6\"\1\0\2\nclose\6'\topen\6'\1\0\v\16default_tab\n<C-t>\21act_as_shift_tab\1\15act_as_tab\2\21ignore_beginning\2\21backwards_tabkey\f<S-Tab>\fexclude\0\vtabkey\n<Tab>\ftabouts\0\15completion\2\21enable_backwards\2\22default_shift_tab\n<C-d>\nsetup\vtabout\frequire\0" },
     load_after = {},
     loaded = true,
     needs_bufread = false,
@@ -299,7 +319,7 @@ _G.packer_plugins = {
 time([[Defining packer_plugins]], false)
 -- Config for: conform.nvim
 time([[Config for conform.nvim]], true)
-try_loadstring("\27LJ\2\nÓ\1\0\0\5\0\n\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\4\0005\4\3\0=\4\5\3=\3\a\0025\3\b\0=\3\t\2B\0\2\1K\0\1\0\19format_on_save\1\0\2\15timeout_ms\3ô\3\15lsp_format\rfallback\21formatters_by_ft\1\0\2\19format_on_save\0\21formatters_by_ft\0\ttoml\1\0\1\ttoml\0\1\2\0\0\ntaplo\nsetup\fconform\frequire\0", "config", "conform.nvim")
+try_loadstring("\27LJ\2\n†\2\0\0\5\0\f\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\b\0005\3\4\0005\4\3\0=\4\5\0035\4\6\0=\4\a\3=\3\t\0025\3\n\0=\3\v\2B\0\2\1K\0\1\0\19format_on_save\1\0\2\15timeout_ms\3ô\3\15lsp_format\rfallback\21formatters_by_ft\1\0\2\21formatters_by_ft\0\19format_on_save\0\trust\1\2\1\0\frustfmt\15lsp_format\rfallback\ttoml\1\0\2\trust\0\ttoml\0\1\2\0\0\ntaplo\nsetup\fconform\frequire\0", "config", "conform.nvim")
 time([[Config for conform.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
@@ -307,7 +327,7 @@ vim.cmd [[ packadd nvim-cmp ]]
 vim.cmd [[ packadd tabout.nvim ]]
 
 -- Config for: tabout.nvim
-try_loadstring("\27LJ\2\n§\3\0\0\5\0\f\0\0236\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0004\3\a\0005\4\4\0>\4\1\0035\4\5\0>\4\2\0035\4\6\0>\4\3\0035\4\a\0>\4\4\0035\4\b\0>\4\5\0035\4\t\0>\4\6\3=\3\n\0024\3\0\0=\3\v\2B\0\2\1K\0\1\0\fexclude\ftabouts\1\0\2\topen\6{\nclose\6}\1\0\2\topen\6[\nclose\6]\1\0\2\topen\6(\nclose\6)\1\0\2\topen\6`\nclose\6`\1\0\2\topen\6\"\nclose\6\"\1\0\2\topen\6'\nclose\6'\1\0\v\fexclude\0\vtabkey\n<Tab>\21ignore_beginning\2\ftabouts\0\15completion\2\21enable_backwards\2\22default_shift_tab\n<C-d>\16default_tab\n<C-t>\21act_as_shift_tab\1\15act_as_tab\2\21backwards_tabkey\f<S-Tab>\nsetup\vtabout\frequire\0", "config", "tabout.nvim")
+try_loadstring("\27LJ\2\n§\3\0\0\5\0\f\0\0236\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0004\3\a\0005\4\4\0>\4\1\0035\4\5\0>\4\2\0035\4\6\0>\4\3\0035\4\a\0>\4\4\0035\4\b\0>\4\5\0035\4\t\0>\4\6\3=\3\n\0024\3\0\0=\3\v\2B\0\2\1K\0\1\0\fexclude\ftabouts\1\0\2\nclose\6}\topen\6{\1\0\2\nclose\6]\topen\6[\1\0\2\nclose\6)\topen\6(\1\0\2\nclose\6`\topen\6`\1\0\2\nclose\6\"\topen\6\"\1\0\2\nclose\6'\topen\6'\1\0\v\16default_tab\n<C-t>\21act_as_shift_tab\1\15act_as_tab\2\21ignore_beginning\2\21backwards_tabkey\f<S-Tab>\fexclude\0\vtabkey\n<Tab>\ftabouts\0\15completion\2\21enable_backwards\2\22default_shift_tab\n<C-d>\nsetup\vtabout\frequire\0", "config", "tabout.nvim")
 
 time([[Sequenced loading]], false)
 

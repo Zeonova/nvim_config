@@ -68,6 +68,7 @@ return require("packer").startup(function(use)
 			require("conform").setup({
 				formatters_by_ft = {
 					toml = { "taplo" }, -- 为 toml 文件使用 taplo 格式化
+					rust = { "rustfmt", lsp_format = "fallback" },
 				},
 				format_on_save = {
 					timeout_ms = 500,
@@ -78,6 +79,21 @@ return require("packer").startup(function(use)
 	})
 
 	use("folke/todo-comments.nvim")
+
+	-- AI
+	use({
+		"yetone/avante.nvim",
+		requires = {
+			"nvim-treesitter/nvim-treesitter",
+			"stevearc/dressing.nvim",
+			"nvim-lua/plenary.nvim",
+			"MunifTanjim/nui.nvim",
+			"MeanderingProgrammer/render-markdown.nvim",
+			"zbirenbaum/copilot.lua",
+		},
+		branch = "main",
+		run = "make",
+	})
 
 	use("numToStr/Comment.nvim") -- gcc和gc注释
 	use("windwp/nvim-autopairs") -- 自动补全括号

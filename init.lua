@@ -20,3 +20,5 @@ require("plugins.fidget")
 
 require("plugins.null-ls")
 require("plugins.utility")
+
+require("plugins.copilot")
